@@ -73,7 +73,7 @@ import 'rxjs/add/operator/map';
   	addVeces(data){
 
   		var headers = new Headers();
-  		var now = new Date();
+  		
   		headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   		var params = 'id='+data.id+'&veces='+data.veces;
   		return new Promise(
