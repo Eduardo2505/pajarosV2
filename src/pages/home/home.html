@@ -1,0 +1,46 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<button ion-button menuToggle>
+
+		<ion-icon name="menu"></ion-icon>
+	</button>
+	<ion-navbar>
+		<ion-title>home</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-slides #mySlider (ionSlideDidChange)="onSlideChanged()">
+		<ion-slide *ngFor="let pajaro of pajaros;let i = index;">
+			<ion-card class="white-car">
+				<ion-card-header >
+			  		<h2>{{pajaro.titulo}}</h2>
+			  		<h1>{{pajaro.pajaro}}</h1>
+			  	</ion-card-header>
+
+			  	<ion-card-content >
+			  		<button ion-button full (click)="openMap(i)">Ver mapa</button>
+			  		<div class="google_map">
+			  			<div  [attr.id]="'map' + i" class="mapa"></div>
+			  		</div>
+			  		<p>Veces visto: {{pajaro.veces}}</p>
+			  		<button ion-button full color="danger" (click)="addVez(i)" >Acabo de verlo</button>
+			  	</ion-card-content>
+
+
+			</ion-card>
+
+
+
+		</ion-slide>
+	</ion-slides>
+
+</ion-content>
