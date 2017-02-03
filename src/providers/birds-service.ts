@@ -11,6 +11,8 @@ import 'rxjs/add/operator/map';
   @Injectable()
   export class BirdsService {
 
+    private url="http://127.0.0.1/pajarosAdmin";
+
   	constructor(public http: Http) {
   		console.log('Hello BirdsService Provider');
   	}
@@ -18,7 +20,7 @@ import 'rxjs/add/operator/map';
   	getAll(){
   		return new Promise(
   			resolve=>{
-  				this.http.get("http://127.0.0.1/pajarosAdmin/admin/all")
+  				this.http.get(this.url+"/admin/all")
   				.map(res=> res.json())
   				.subscribe(
   					data => {
@@ -36,7 +38,7 @@ import 'rxjs/add/operator/map';
   	getOne(id){
   		return new Promise(
   			resolve=>{
-  				this.http.get("http://127.0.0.1/pajarosAdmin/admin/buscar?id="+id)
+  				this.http.get(this.url+"/admin/buscar?id="+id)
   				.map(res=> res.json())
   				.subscribe(
   					data => {
@@ -52,11 +54,14 @@ import 'rxjs/add/operator/map';
 
 
   	add(data){
-
+     var headers = new Headers();
+      
+      headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      var params = 'titulo='+data.titulo+'&pajaro='+data.pajaro+'&latitud='+data.latitud+'&longitud='+data.longitud+'&veces='+data.veces+'&lastview='+data.lastView;
 
   		return new Promise(
   			resolve=>{
-  				this.http.post("http://127.0.0.1/pajarosAdmin/admin/add", data)
+  				this.http.post(this.url+"/admin/add", params,{headers: headers})
   				.map(res=> res.json())
   				.subscribe(
   					data => {
@@ -78,7 +83,7 @@ import 'rxjs/add/operator/map';
   		var params = 'id='+data.id+'&veces='+data.veces;
   		return new Promise(
   			resolve=>{
-  				this.http.post("http://127.0.0.1/pajarosAdmin/admin/updateVeces", params,{headers: headers})
+  				this.http.post(this.url+"/admin/updateVeces", params,{headers: headers})
   				.map(res=> res.json())
   				.subscribe(
   					data => {
@@ -97,7 +102,7 @@ import 'rxjs/add/operator/map';
   	update(data){
   		return new Promise(
   			resolve=>{
-  				this.http.post("http://127.0.0.1/pajarosAdmin/admin/update", data)
+  				this.http.post(this.url+"/admin/update", data)
   				.map(res=> res.json())
   				.subscribe(
   					data => {
@@ -114,7 +119,7 @@ import 'rxjs/add/operator/map';
   	delete(id){
   		return new Promise(
   			resolve=>{
-  				this.http.get("http://127.0.0.1/pajarosAdmin/admin/delete?id="+id)
+  				this.http.get(this.url+"/admin/delete?id="+id)
   				.map(res=> res.json())
   				.subscribe(
   					data => {

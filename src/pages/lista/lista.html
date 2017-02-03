@@ -17,5 +17,11 @@
 
 
 <ion-content padding>
-
+<ion-list>
+		<ion-item *ngFor="let pajaro of pajaros; let i = index;">
+			<p (click)="goHome(i)"><strong>{{pajaro.pajaro}}</strong> - {{pajaro.titulo}}</p>
+			<button item-right (click)="goUpdate(pajaro.id)">Editar</button>
+			<button item-right (click)="delete(pajaro.id)">Borrar</button>
+		</ion-item>
+	</ion-list>
 </ion-content>
