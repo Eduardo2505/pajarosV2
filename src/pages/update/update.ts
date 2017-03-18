@@ -53,15 +53,16 @@ import { AlertController } from 'ionic-angular';
     }
 
     enviar(){
-      var now = new Date();
+
       var datos = {};
       datos["titulo"] =  this.titulo;
       datos["pajaro"] =  this.pajaro;
       datos["id"] =  this.id;
+      
       this.servicios.update(datos)
       .then(
         data => {
-          console.log(data);
+
           if(data["mensaje"] == "1"){
             let alert = this.alertCtrl.create(
             {

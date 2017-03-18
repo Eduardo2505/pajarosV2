@@ -100,9 +100,15 @@ import 'rxjs/add/operator/map';
   	}
 
   	update(data){
+      //console.log("Entro Aqui Servicios");
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      var params = 'id='+data.id+'&pajaro='+data.pajaro+'&titulo='+data.titulo;
+
+      
   		return new Promise(
   			resolve=>{
-  				this.http.post(this.url+"/admin/update", data)
+  				this.http.post(this.url+"/admin/update", params,{headers: headers})
   				.map(res=> res.json())
   				.subscribe(
   					data => {
