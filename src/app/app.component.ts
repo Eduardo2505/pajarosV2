@@ -5,12 +5,14 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
 import { ListaPage } from '../pages/lista/lista';
-import { UpdatePage } from '../pages/update/update';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 @Component({
   templateUrl: 'app.html'
 })
+
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
@@ -25,9 +27,10 @@ export class MyApp {
     this.pages = [
     { title: 'Home', component: HomePage },
     { title: 'Agregar', component: AddPage },
-    { title: 'Listar', component: ListaPage },
-    { title: 'Actualizar', component: UpdatePage }
-    ];
+    { title: 'TabsPage', component: TabsPage },
+    { title: 'Listar', component: ListaPage }];
+
+    
 
   }
 
@@ -45,4 +48,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+ 
 }

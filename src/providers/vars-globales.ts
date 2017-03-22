@@ -12,28 +12,29 @@ import 'rxjs/add/operator/map';
   export class VarsGlobales {
   	private scriptLoaded;
   	private slide;
+    
 
-  	constructor(public http: Http) {
-  		console.log('Hello VarsGlobales Provider');
-  		this.scriptLoaded = false;
+    constructor(public http: Http) {
+      console.log('Hello VarsGlobales Provider');
+      this.scriptLoaded = false;
       this.slide = 0;
-  	}
+    
+    }
+    setScriptLoaded(value){
+      this.scriptLoaded = value;
+    }
 
-  	setScriptLoaded(value){
-  		this.scriptLoaded = value;
-  	}
+    getScriptLoaded(){
+      return this.scriptLoaded;
+    }
 
-  	getScriptLoaded(){
-  		return this.scriptLoaded;
-  	}
+    setSlide(value){
+      this.scriptLoaded = value;
+    }
 
-  	setSlide(value){
-  		this.scriptLoaded = value;
-  	}
-
-  	getSlide(){
-  		return this.scriptLoaded;
-  	}
+    getSlide(){
+      return this.scriptLoaded;
+    }
 
 
 

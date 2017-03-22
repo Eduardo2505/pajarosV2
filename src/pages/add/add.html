@@ -5,17 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <button ion-button menuToggle>
+	<button ion-button menuToggle>
 
-     <ion-icon name="menu"></ion-icon>
-   </button>
-  <ion-navbar>
-    <ion-title>add</ion-title>
-  </ion-navbar>
+		<ion-icon name="menu"></ion-icon>
+	</button>
+	<ion-navbar>
+		<ion-title>Agregar pájaros</ion-title>
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label floating>Título</ion-label>
+			<ion-input type="text" [(ngModel)]="titulo"  ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>Pájaro</ion-label>
+			<ion-input type="text" [(ngModel)]="pajaro"></ion-input>
+		</ion-item>
+		<ion-item>
+		</ion-item>
+	</ion-list>
+	<button ion-button full (click)="enviar()">Enviar</button>
 
 </ion-content>

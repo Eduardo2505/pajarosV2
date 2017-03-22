@@ -5,6 +5,7 @@ import { HomePage } from '../pages/home/home';
 import { AddPage } from '../pages/add/add';
 import { ListaPage } from '../pages/lista/lista';
 import { UpdatePage } from '../pages/update/update';
+import { TabsPage } from '../pages/tabs/tabs';
 
 //provides
 
@@ -17,7 +18,8 @@ import { VarsGlobales } from '../providers/vars-globales';
     HomePage,
     UpdatePage,
     ListaPage,
-    AddPage
+    AddPage,
+    TabsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -28,7 +30,8 @@ import { VarsGlobales } from '../providers/vars-globales';
     HomePage,
     UpdatePage,
     ListaPage,
-    AddPage
+    AddPage,
+    TabsPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},VarsGlobales]
 })
