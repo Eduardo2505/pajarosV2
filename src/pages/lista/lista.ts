@@ -8,7 +8,7 @@ import { AlertController } from 'ionic-angular';
 
 
 import { HomePage } from '../home/home';
-import { AddPage } from '../add/add';
+//import { AddPage } from '../add/add';
 import { UpdatePage } from '../update/update';
 
 /*
@@ -52,13 +52,13 @@ import { UpdatePage } from '../update/update';
   }
 
   goHome(index){
-    console.log(index);
+    //console.log(index);
     this.varsGlobales.setSlide(index);
     this.navCtrl.push(HomePage);
   }
 
   goUpdate(index){
-    console.log(index);
+  //  console.log(index);
     this.navCtrl.push(UpdatePage, {id:index});
   }
 
