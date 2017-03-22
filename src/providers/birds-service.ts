@@ -77,12 +77,9 @@ import 'rxjs/add/operator/map';
 
   	addVeces(data){
 
-<<<<<<< HEAD
+
   		var headers = new Headers();  		
-=======
-  		var headers = new Headers();
-  		
->>>>>>> origin/master
+
   		headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   		var params = 'id='+data.id+'&veces='+data.veces;
   		return new Promise(
